@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  mssql:
+    image: "mcr.microsoft.com/mssql/server:2019-CU13-ubuntu-20.04"
+    environment:
+      SA_PASSWORD: "P@ssw0rd"
+      ACCEPT_EULA: Y
+      MSSQL_PID: Developer
+    ports:
+      - 1433:1433
+    volumes:
+      - ./mssqlVOLUME:/var/opt/mssql
+    restart: always
